@@ -37,7 +37,10 @@ specification('Users can submit ideas', () => {
 
     when('new idea is submitted', async () => {
       action(async () => {
-        await pages.home.submitNewIdea('Host a TypeScript workshop!', 'Workshop would be useful to have hands-on practice with the language.');
+        await pages.home.submitNewIdea(
+          'Host a TypeScript workshop!',
+          'Workshop would be useful to have hands-on practice with the language.'
+        );
       });
 
       then('it should have 1 supporter', async () => {
@@ -49,7 +52,9 @@ specification('Users can submit ideas', () => {
       });
 
       then('it should show correct description', async () => {
-        await ensure(pages.showIdea.Description).textIs('Workshop would be useful to have hands-on practice with the language.');
+        await ensure(pages.showIdea.Description).textIs(
+          'Workshop would be useful to have hands-on practice with the language.'
+        );
       });
     });
   });

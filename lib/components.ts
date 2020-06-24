@@ -1,7 +1,7 @@
 import { WebElementPromise } from 'selenium-webdriver';
 
 export class WebComponent {
-  constructor(protected element: WebElementPromise, public selector: string) { }
+  constructor(protected element: WebElementPromise, public selector: string) {}
 
   public async click() {
     try {
@@ -35,7 +35,7 @@ export class Button extends WebComponent {
 
   public async isDisabled() {
     try {
-      return await this.element.getAttribute('disabled') === 'disabled';
+      return (await this.element.getAttribute('disabled')) === 'disabled';
     } catch (ex) {
       return false;
     }

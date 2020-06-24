@@ -32,12 +32,12 @@ export class Browser {
   }
 
   public async waitAny(conditions: WaitCondition | WaitCondition[]): Promise<void> {
-    const all = (!(conditions instanceof Array)) ? [ conditions ] : conditions;
+    const all = !(conditions instanceof Array) ? [conditions] : conditions;
 
     await this.driver.wait(async () => {
       for (const condition of all) {
         try {
-          if (await condition(this) === true) {
+          if ((await condition(this)) === true) {
             return true;
           }
           continue;

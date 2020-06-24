@@ -4,11 +4,13 @@
     "module": "commonjs",
     "strict": true,
     "outDir": "dist",
-    "lib": [
-      "es6"
-    ],
-    "types": [ "mocha", "node" ],
+    "lib": ["es6"],
+    "types": ["mocha", "node"],
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "baseUrl": ".",
+    "paths": {
+      "@lib": ["lib/index.ts"]
+    }
   }
 }

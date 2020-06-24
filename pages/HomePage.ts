@@ -1,4 +1,13 @@
-import { WebComponent, Browser, Page, findBy, Button, TextInput, elementIsVisible, pageHasLoaded } from '../lib';
+import {
+  WebComponent,
+  Browser,
+  Page,
+  findBy,
+  Button,
+  TextInput,
+  elementIsVisible,
+  pageHasLoaded,
+} from '../lib';
 import { ShowIdeaPage, GoogleSignInPage, FacebookSignInPage } from './';
 import config from '../config';
 
@@ -54,10 +63,7 @@ export class HomePage extends Page {
     await this.signOut();
 
     await this.signIn(() => this.GoogleSignIn);
-    await this.browser.waitAny([
-      pageHasLoaded(GoogleSignInPage),
-      pageHasLoaded(HomePage),
-    ]);
+    await this.browser.waitAny([pageHasLoaded(GoogleSignInPage), pageHasLoaded(HomePage)]);
   }
 
   public async signInWithFacebook(): Promise<void> {
@@ -65,10 +71,7 @@ export class HomePage extends Page {
     await this.signOut();
 
     await this.signIn(() => this.FacebookSignIn);
-    await this.browser.waitAny([
-      pageHasLoaded(FacebookSignInPage),
-      pageHasLoaded(HomePage),
-    ]);
+    await this.browser.waitAny([pageHasLoaded(FacebookSignInPage), pageHasLoaded(HomePage)]);
   }
 
   private async signIn(locator: () => WebComponent): Promise<void> {

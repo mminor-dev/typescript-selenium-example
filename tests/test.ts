@@ -1,5 +1,12 @@
 import { Browser, ensure } from '../lib';
-import { Builder, ThenableWebDriver, WebElement, By, WebElementPromise, until } from 'selenium-webdriver';
+import {
+  Builder,
+  ThenableWebDriver,
+  WebElement,
+  By,
+  WebElementPromise,
+  until,
+} from 'selenium-webdriver';
 import { AllPages } from '../pages';
 
 describe('Submit ideas', () => {
@@ -32,12 +39,17 @@ describe('Submit ideas', () => {
     await ensure(pages.home.UserMenu).textIs('Darth Vader');
 
     // Action
-    await pages.home.submitNewIdea('Host a TypeScript workshop!', 'Workshop would be useful to have hands-on practice with the language.');
+    await pages.home.submitNewIdea(
+      'Host a TypeScript workshop!',
+      'Workshop would be useful to have hands-on practice with the language.'
+    );
 
     // Assert
     await Promise.all([
       ensure(pages.showIdea.Title).textIs('Host a TypeScript workshop!'),
-      ensure(pages.showIdea.Description).textIs('Workshop would be useful to have hands-on practice with the language.'),
+      ensure(pages.showIdea.Description).textIs(
+        'Workshop would be useful to have hands-on practice with the language.'
+      ),
       ensure(pages.showIdea.SupportCounter).textIs('1'),
     ]);
   });

@@ -1,7 +1,7 @@
 import { Browser, WaitCondition } from './';
 
 export interface NewablePage<T extends Page> {
-  new(browser: Browser): T;
+  new (browser: Browser): T;
 }
 
 export abstract class Page {
@@ -18,7 +18,5 @@ export abstract class Page {
 
   public abstract loadCondition(): WaitCondition;
 
-  public constructor(protected browser: Browser) {
-
-  }
+  public constructor(protected browser: Browser) {}
 }

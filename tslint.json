@@ -1,36 +1,19 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint:recommended"
-    ],
-    "jsRules": {},
-    "rules": {
-        "quotemark": [
-            true, "single", "jsx-double"
-        ],
-        "no-unused-expression": [
-            false
-        ],
-        "ordered-imports": [
-            false
-        ],
-        "max-classes-per-file": [
-            false
-        ],
-        "interface-name": [
-            false
-        ],
-        "no-var-requires": false,
-        "member-ordering": [
-            false
-        ],
-        "no-console": [
-            false
-        ],
-        "object-literal-shorthand": false,
-        "max-line-length": [
-            false
-        ]
-    },
-    "rulesDirectory": []
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended"],
+  "jsRules": {},
+  "rules": {
+    "interface-name": [false],
+    "max-classes-per-file": [false, 1],
+    "max-line-length": [false],
+    "member-access": [true, "no-public"],
+    "member-ordering": [false],
+    "no-console": [false],
+    "no-unused-expression": [false],
+    "no-var-requires": false,
+    "object-literal-shorthand": true,
+    "ordered-imports": [false],
+    "quotemark": [true, "single", "jsx-double"]
+  },
+  "rulesDirectory": []
 }

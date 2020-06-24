@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "tdd": "rm -rf dist && tsc && mocha -t 10000 dist/tests",
-    "bdd": "rm -rf dist && tsc && mocha -t 10000 dist/specs"
+    "bdd": "rm -rf dist && tsc && mocha -t 10000 dist/specs",
+    "format:write": "prettier --write **/*.{ts,js,html,json}"
   },
   "keywords": [],
   "author": "Guilherme Oenning",
@@ -16,6 +17,7 @@
     "@types/selenium-webdriver": "^3.0.4",
     "chromedriver": "^2.30.1",
     "mocha": "^3.4.2",
+    "prettier": "^2.0.5",
     "reflect-metadata": "^0.1.10",
     "selenium-webdriver": "^3.4.0",
     "tslint": "^5.4.3",
